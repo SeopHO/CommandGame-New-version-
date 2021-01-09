@@ -1,20 +1,20 @@
-let canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-let Question={
+const Question={
     url:"./image/Question.png",
     posX:750,
     posY:canvas.height/2,
     posCmX:650,
-    posCmY:(canvas.height/2)+100,
+    posCmY:(canvas.height/2)-50,
 };
 
-let Answer={
+const Answer={
     url:"./image/Answer.png",
     posX:150,
     posY:canvas.height/2,
     posCmX:130,
-    posCmY:(canvas.height/2)+100,
+    posCmY:(canvas.height/2)-50,
 }
 
 const command_up={
@@ -37,7 +37,6 @@ const command_left={
     code:37,
     url:"./image/left.png",
 }
-
 
 let QueImage = new Image();
 let AnsImage = new Image();
