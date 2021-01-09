@@ -38,6 +38,7 @@ const command_left={
     url:"./image/left.png",
 }
 
+
 let QueImage = new Image();
 let AnsImage = new Image();
 
@@ -52,7 +53,5 @@ let A_B_Image = new Image();
 QueImage.src= Question.url;
 AnsImage.src = Answer.url;
 
-upImage.src= command_up.url;
-downImage.src= command_down.url;
-leftImage.src= command_left.url;
-rightImage.src= command_right.url;
+
+

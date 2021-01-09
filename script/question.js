@@ -21,33 +21,38 @@ function checkQuecommands()
     },1000);
 }
 
-function drawQuecommands(rec)
+function drawQuecommands(rec) 
 {
     console.log('그린다');
     console.log(rec);
-    
+
     switch (rec) {
+
         case command_up.text:
-            console.log('성공!');
-            
-            upImage.onload = () => {
+            upImage.src= command_up.url;
+            upImage.onload=()=>{
                 ctx.drawImage(upImage, Question.posCmX, Question.posCmY);
             }
             break;
         case command_down.text:
-            downImage.onload = () => {
+            downImage.src= command_down.url;
+            downImage.onload=()=>{
                 ctx.drawImage(downImage, Question.posCmX, Question.posCmY);
             }
             break;
         case command_left.text:
-            leftImage.onload = () => {
+            leftImage.src= command_left.url;
+            leftImage.onload=()=>{
                 ctx.drawImage(leftImage, Question.posCmX, Question.posCmY);
             }
             break;
         case command_right.text:
-            rightImage.onload = () => {
+            rightImage.src= command_right.url;
+            rightImage.onload=()=>{
                 ctx.drawImage(rightImage, Question.posCmX, Question.posCmY);
             }
+            break;
+        default:
             break;
     }
 }
