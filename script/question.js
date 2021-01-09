@@ -11,6 +11,12 @@ function checkQuecommands()
     {    
         let rec = randcommands[cnt].text;
         drawQuecommands(rec);
+        let timer2 = setTimeout(function()
+        {
+            ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
+
+            clearTimeout(timer2);
+        },1000);
         cnt++;
 
         if(cnt === QuestionLen())
@@ -18,7 +24,7 @@ function checkQuecommands()
             clearInterval(timer);
         }
 
-    },1000);
+    },2000);
 }
 
 function drawQuecommands(rec) 
@@ -55,6 +61,11 @@ function drawQuecommands(rec)
         default:
             break;
     }
+}
+
+function eraseQuecommands()
+{
+
 }
 
 function test()
