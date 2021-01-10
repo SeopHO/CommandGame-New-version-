@@ -32,7 +32,7 @@ function checkQuecommands()
                 {
                     eraseEndQuecommands();
                     clearTimeout(timer4)
-                },2000);
+                },1000);
                 clearTimeout(timer3);
             },2000);
         }

@@ -9,6 +9,8 @@ let randNumArr = [];
 let wrong = false;
 let corrent = false;
 
+let dotcnt = 0;
+
 function QuestionLen()
 {
     let a=4;
@@ -24,28 +26,32 @@ function CreateRandomNum()
         let temp = randNumArr[i];
         randcommands[i] = commands[temp];
     }
-
 }
 
 function comparecommands()
 {
-    for(let i=0;i<QuestionLen();i++)
-    {
-       if(randcommands[i] != usercommands[i])
-       {
-            wrong = true;
-       }
-    }
     let timer = setInterval(function()
     {
-        
-    });
-    compareResult();
-}
+        dotImage.src= dotImageUrl[dotcnt];
+        dotImage.onload=()=>{
+            ctx.drawImage(dotImage, Question.posCmX, Question.posCmY);
+        }
+        dotcnt++;
 
-function comparecommandsAnimation()
-{
-    
+        if(dotcnt > 3)
+        {
+            for(let i=0;i<QuestionLen();i++)
+            {
+               if(randcommands[i] != usercommands[i])
+               {
+                    wrong = true;
+               }
+            }
+            clearInterval(timer);
+        }
+
+    },1000);
+    compareResult();
 }
 
 function compareResult()
