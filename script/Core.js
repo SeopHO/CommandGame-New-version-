@@ -1,14 +1,14 @@
 let commands = [command_up,command_down,command_left,command_right];
 let usercommands = [];
 
-
 let randcommands = []; 
 
 let randNum;
 let randNumArr = [];
 
 
-let ansReady = false;
+let wrong = false;
+let corrent = false;
 
 function QuestionLen()
 {
@@ -29,7 +29,26 @@ function CreateRandomNum()
 
 function comparecommands()
 {
-    
+    for(let i=0;i<QuestionLen();i++)
+    {
+       if(randcommands[i] != usercommands[i])
+       {
+            wrong = true;
+       }
+    }
+    compareResult();
+}
+
+function compareResult()
+{
+    if(wrong === true)
+    {
+        console.log('WRONG');
+    }
+    else
+    {
+        console.log('CORRECT');
+    }
 }
 
 function init()
@@ -37,7 +56,5 @@ function init()
     CreateRandomNum();
     // console.log(QuestionLen());
     console.log(randcommands);
-    
-    
 }
 init();

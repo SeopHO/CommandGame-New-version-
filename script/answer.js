@@ -12,7 +12,6 @@ AnsImage.onload=()=>
 document.addEventListener("keydown",drawAnscommands);
 document.addEventListener("keyup",keyUphandler);
 
-
 function drawAnscommands(event)
 {
     // console.log('키 눌름');
@@ -54,6 +53,12 @@ function drawAnscommands(event)
                 pushUsercommands(command_right);
                 break;
             default:
+                XImage.src = command_X.url;
+                eraseAnscommands();
+                XImage.onload=()=>{
+                    ctx.drawImage(XImage, Answer.posCmX, Answer.posCmY);
+                }
+                pushUsercommands(command_X);
                 break;
         }
     }
@@ -85,7 +90,6 @@ function pushUsercommands(commandValue)
 
 function eraseAnscommands()
 {
-    
     if(ansEnd === true)
     {
         let timer=setTimeout(function()
@@ -93,6 +97,7 @@ function eraseAnscommands()
             ctx.clearRect(Answer.posCmX,Answer.posCmY,150,50);
             clearTimeout(timer);
         },2000);
+        comparecommands();
     }
     else
     {

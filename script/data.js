@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 const Question={
     url:"./image/Question.png",
-    doneUrl: "./image/your-turn.png",
+    EndUrl: "./image/your-turn.png",
     posX:750,
     posY:canvas.height/2,
     posCmX:650,
@@ -38,7 +38,11 @@ const command_left={
     code:37,
     url:"./image/left.png",
 }
-
+const command_X={
+    text:'X',
+    code:'###',
+    url:"./image/x.png",
+}
 
 let QueImage = new Image();
 let AnsImage = new Image();
@@ -47,8 +51,9 @@ let upImage = new Image();
 let downImage = new Image();
 let leftImage = new Image();
 let rightImage = new Image();
+let XImage = new Image();
 
-let quedoneImage = new Image();
+let queEndImage = new Image();
 
 // let Q_B_Image = new Image();
 // let A_B_Image = new Image();
@@ -56,7 +61,7 @@ let quedoneImage = new Image();
 QueImage.src= Question.url;
 AnsImage.src = Answer.url;
 
-quedoneImage.src = Question.doneUrl;
+queEndImage.src = Question.EndUrl;
 
 
 

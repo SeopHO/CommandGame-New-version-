@@ -45,7 +45,6 @@ function drawQuecommands(rec)
     console.log(rec);
 
     switch (rec) {
-
         case command_up.text:
             upImage.src= command_up.url;
             upImage.onload=()=>{
@@ -70,6 +69,7 @@ function drawQuecommands(rec)
                 ctx.drawImage(rightImage, Question.posCmX, Question.posCmY);
             }
             break;
+            
         default:
             break;
     }
@@ -82,7 +82,7 @@ function eraseQuecommands()
 
 function drawEndQuecommands()
 {
-    ctx.drawImage(quedoneImage, Question.posCmX-50, Question.posCmY);
+    ctx.drawImage(queEndImage, Question.posCmX-50, Question.posCmY);
 }
 
 function eraseEndQuecommands()
