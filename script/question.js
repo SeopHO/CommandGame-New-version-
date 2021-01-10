@@ -36,7 +36,6 @@ function checkQuecommands()
                 clearTimeout(timer3);
             },2000);
         }
-
     },2000);
 }
 

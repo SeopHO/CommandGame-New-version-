@@ -6,7 +6,6 @@ let randcommands = [];
 let randNum;
 let randNumArr = [];
 
-
 let wrong = false;
 let corrent = false;
 
@@ -25,6 +24,7 @@ function CreateRandomNum()
         let temp = randNumArr[i];
         randcommands[i] = commands[temp];
     }
+
 }
 
 function comparecommands()
@@ -36,7 +36,16 @@ function comparecommands()
             wrong = true;
        }
     }
+    let timer = setInterval(function()
+    {
+        
+    });
     compareResult();
+}
+
+function comparecommandsAnimation()
+{
+    
 }
 
 function compareResult()

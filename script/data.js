@@ -9,7 +9,6 @@ const Question={
     posCmX:650,
     posCmY:(canvas.height/2)-50,
 };
-
 const Answer={
     url:"./image/Answer.png",
     posX:150,
@@ -17,7 +16,6 @@ const Answer={
     posCmX:170,
     posCmY:(canvas.height/2)-50,
 }
-
 const command_up={
     text:'up',
     code:38,
@@ -52,6 +50,9 @@ let downImage = new Image();
 let leftImage = new Image();
 let rightImage = new Image();
 let XImage = new Image();
+
+let dotImage = new Image();
+let dotImageUrl = ["./image/dot1.png","./image/dot2.png","./image/dot3.png"];
 
 let queEndImage = new Image();
 
