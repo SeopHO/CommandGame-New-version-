@@ -14,7 +14,6 @@ document.addEventListener("keyup",keyUphandler);
 
 function drawAnscommands(event)
 {
-    // console.log('키 눌름');
     if(queEnd === true && pushKey === false && ansEnd === false)
     {
         pushKey = true;

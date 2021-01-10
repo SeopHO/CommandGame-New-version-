@@ -89,11 +89,10 @@ function eraseEndQuecommands()
     ctx.clearRect(Question.posCmX-50,Question.posCmY,200,50);
 }
 
-function test()
+function queInit()
 {
-    console.log(true);
     checkQuecommands();
 }
-test();
+queInit();
 
 

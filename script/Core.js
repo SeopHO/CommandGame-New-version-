@@ -30,6 +30,14 @@ function CreateRandomNum()
 
 function comparecommands()
 {
+    for(let i=0;i<QuestionLen();i++)
+    {
+       if(randcommands[i] != usercommands[i])
+       {
+            wrong = true;
+       }
+    }
+
     let timer = setInterval(function()
     {
         dotImage.src= dotImageUrl[dotcnt];
@@ -38,15 +46,8 @@ function comparecommands()
         }
         dotcnt++;
 
-        if(dotcnt > 3)
+        if(dotcnt === 3)
         {
-            for(let i=0;i<QuestionLen();i++)
-            {
-               if(randcommands[i] != usercommands[i])
-               {
-                    wrong = true;
-               }
-            }
             clearInterval(timer);
         }
 
@@ -59,10 +60,6 @@ function compareResult()
     if(wrong === true)
     {
         console.log('WRONG');
-        let timer = setTimeout(function()
-        {
-
-        },1000);
     }
     else
     {
@@ -77,7 +74,31 @@ function compareResult()
             }
             clearTimeout(timer);
         },4500);
+
+        let timer2 = setTimeout(function()
+        {
+            ctx.clearRect(Question.posCmX,Question.posCmY,200,50);
+            reset();
+            clearTimeout(timer2);
+        },6000);
+
     }
+}
+
+function reset()
+{
+    ansEnd = false;
+    queEnd=false;
+    cnt=0;
+    wrong = false;
+    corrent = false;
+    userCommandsCnt=0;
+    dotcnt = 0;
+    usercommands=[];
+    randcommands=[];
+    randNumArr = [];
+    queInit();
+    init();
 }
 
 function init()
