@@ -5,6 +5,9 @@ let randcommands = [];
 let randNum;
 let randNumArr = [];
 
+
+
+
 function QuestionLen()
 {
     let a=4;

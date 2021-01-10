@@ -13,8 +13,7 @@ function checkQuecommands()
         drawQuecommands(rec);
         let timer2 = setTimeout(function()
         {
-            ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
-
+            eraseQuecommands();
             clearTimeout(timer2);
         },1000);
         cnt++;
@@ -65,7 +64,7 @@ function drawQuecommands(rec)
 
 function eraseQuecommands()
 {
-
+    ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
 }
 
 function test()
