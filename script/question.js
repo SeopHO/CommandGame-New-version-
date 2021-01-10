@@ -1,5 +1,7 @@
 let cnt = 0;
 
+let queEnd = false;
+
 QueImage.onload=()=>
 {
     ctx.drawImage(QueImage,Question.posX,Question.posY);
@@ -20,7 +22,20 @@ function checkQuecommands()
 
         if(cnt === QuestionLen())
         {
+            
             clearInterval(timer);
+
+            let timer3 = setTimeout(function()
+            {
+                queEnd = true;
+                drawEndQuecommands();
+                let timer4 = setTimeout(function()
+                {
+                    eraseEndQuecommands();
+                    clearTimeout(timer4)
+                },2000);
+                clearTimeout(timer3);
+            },2000);
         }
 
     },2000);
@@ -28,7 +43,6 @@ function checkQuecommands()
 
 function drawQuecommands(rec) 
 {
-    console.log('그린다');
     console.log(rec);
 
     switch (rec) {
@@ -65,6 +79,16 @@ function drawQuecommands(rec)
 function eraseQuecommands()
 {
     ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
+}
+
+function drawEndQuecommands()
+{
+    ctx.drawImage(quedoneImage, Question.posCmX-50, Question.posCmY);
+}
+
+function eraseEndQuecommands()
+{
+    ctx.clearRect(Question.posCmX-50,Question.posCmY,200,50);
 }
 
 function test()

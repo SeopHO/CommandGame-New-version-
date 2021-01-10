@@ -6,7 +6,7 @@ let randNum;
 let randNumArr = [];
 
 
-
+let ansReady = false;
 
 function QuestionLen()
 {
@@ -28,10 +28,8 @@ function CreateRandomNum()
 function init()
 {
     CreateRandomNum();
-    console.log(QuestionLen());
-    
+    // console.log(QuestionLen());
     console.log(randcommands);
-    console.log(randcommands[1].text);
     
     
 }
