@@ -12,13 +12,6 @@ AnsImage.onload=()=>
 document.addEventListener("keydown",drawAnscommands);
 document.addEventListener("keyup",keyUphandler);
 
-function checkAnscommands()
-{
-    if(userCommandsCnt === QuestionLen())
-    {
-        ansEnd = true;
-    }
-}
 
 function drawAnscommands(event)
 {
@@ -80,16 +73,29 @@ function pushUsercommands(commandValue)
 {
     usercommands.push(commandValue);
     userCommandsCnt++;
+
+    if(userCommandsCnt === QuestionLen())
+    {
+        ansEnd = true;
+        eraseAnscommands();
+        console.log(usercommands);
+        console.log('Answer End');
+    }
 }
 
 function eraseAnscommands()
 {
-    ctx.clearRect(Answer.posCmX,Answer.posCmY,150,50);
+    
+    if(ansEnd === true)
+    {
+        let timer=setTimeout(function()
+        {
+            ctx.clearRect(Answer.posCmX,Answer.posCmY,150,50);
+            clearTimeout(timer);
+        },2000);
+    }
+    else
+    {
+        ctx.clearRect(Answer.posCmX,Answer.posCmY,150,50);
+    }
 }
-
-function userInit()
-{
-    checkAnscommands();
-}
-
-userInit();
