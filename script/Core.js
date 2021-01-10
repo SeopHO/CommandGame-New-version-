@@ -59,10 +59,24 @@ function compareResult()
     if(wrong === true)
     {
         console.log('WRONG');
+        let timer = setTimeout(function()
+        {
+
+        },1000);
     }
     else
     {
         console.log('CORRECT');
+        let timer = setTimeout(function()
+        {
+            ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
+            correctImage.src = Question.correctUrl;
+            correctImage.onload=()=>
+            {
+                ctx.drawImage(correctImage,Question.posCmX, Question.posCmY);
+            }
+            clearTimeout(timer);
+        },4500);
     }
 }
 

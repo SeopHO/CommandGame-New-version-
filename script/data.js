@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 const Question={
     url:"./image/Question.png",
     EndUrl: "./image/your-turn.png",
+    correctUrl: "./image/correct.png",
     posX:750,
     posY:canvas.height/2,
     posCmX:650,
@@ -54,6 +55,8 @@ let XImage = new Image();
 let dotImage = new Image();
 let dotImageUrl = ["./image/dot1.png","./image/dot2.png","./image/dot3.png"];
 
+let correctImage = new Image();
+
 let queEndImage = new Image();
 
 // let Q_B_Image = new Image();
@@ -63,6 +66,8 @@ QueImage.src= Question.url;
 AnsImage.src = Answer.url;
 
 queEndImage.src = Question.EndUrl;
+
+
 
 
 
