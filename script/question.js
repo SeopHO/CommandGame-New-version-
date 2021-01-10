@@ -9,7 +9,7 @@ QueImage.onload=()=>
 
 function checkQuecommands()
 {
-    let timer=setInterval(function()
+    let timer1=setInterval(function()
     {    
         let rec = randcommands[cnt].text;
         drawQuecommands(rec);
@@ -22,8 +22,7 @@ function checkQuecommands()
 
         if(cnt === QuestionLen())
         {
-            
-            clearInterval(timer);
+            clearInterval(timer1);
 
             let timer3 = setTimeout(function()
             {

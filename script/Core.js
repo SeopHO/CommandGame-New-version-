@@ -1,4 +1,6 @@
 let commands = [command_up,command_down,command_left,command_right];
+let usercommands = [];
+
 
 let randcommands = []; 
 
@@ -23,6 +25,11 @@ function CreateRandomNum()
         let temp = randNumArr[i];
         randcommands[i] = commands[temp];
     }
+}
+
+function comparecommands()
+{
+    
 }
 
 function init()

@@ -1,4 +1,8 @@
-let pushKey = false;
+let ansEnd = false;
+
+let pushKey;
+
+let userCommandsCnt=0;;
 
 AnsImage.onload=()=>
 {
@@ -8,39 +12,63 @@ AnsImage.onload=()=>
 document.addEventListener("keydown",drawAnscommands);
 document.addEventListener("keyup",keyUphandler);
 
+function checkAnscommands()
+{
+    if(userCommandsCnt === QuestionLen())
+    {
+        ansEnd = true;
+    }
+}
+
 function drawAnscommands(event)
 {
     // console.log('키 눌름');
-    
-    switch(event.keyCode)
+    if(queEnd === true && pushKey === false && ansEnd === false)
     {
-        case command_up.code:
-            upImage.src= command_up.url;
-            upImage.onload=()=>{
-                ctx.drawImage(upImage, Answer.posCmX, Answer.posCmY);
-            }
-            break;
-        case command_down.code:
-            downImage.src= command_down.url;
-            downImage.onload=()=>{
-                ctx.drawImage(downImage, Answer.posCmX, Answer.posCmY);
-            }
-            break;
-        case command_left.code:
-            leftImage.src= command_left.url;
-            leftImage.onload=()=>{
-                ctx.drawImage(leftImage, Answer.posCmX, Answer.posCmY);
-            }
-            break;
-        case command_right.code:
-            rightImage.src= command_right.url;
-            rightImage.onload=()=>{
-                ctx.drawImage(rightImage, Answer.posCmX, Answer.posCmY);
-            }
-            break;
-        default:
-            break;
+        pushKey = true;
+        switch(event.keyCode)
+        {
+            case command_up.code:
+                upImage.src= command_up.url;
+                eraseAnscommands();
+                upImage.onload=()=>{
+                    ctx.drawImage(upImage, Answer.posCmX, Answer.posCmY);
+                }
+                pushUsercommands(command_up);
+                break;
+            case command_down.code:
+                downImage.src= command_down.url;
+                eraseAnscommands();
+                downImage.onload=()=>{
+                    ctx.drawImage(downImage, Answer.posCmX, Answer.posCmY);
+                }
+                pushUsercommands(command_down);
+                break;
+            case command_left.code:
+                leftImage.src= command_left.url;
+                eraseAnscommands();
+                leftImage.onload=()=>{
+                    ctx.drawImage(leftImage, Answer.posCmX, Answer.posCmY);
+                }
+                pushUsercommands(command_left);
+                break;
+            case command_right.code:
+                rightImage.src= command_right.url;
+                eraseAnscommands();
+                rightImage.onload=()=>{
+                    ctx.drawImage(rightImage, Answer.posCmX, Answer.posCmY);
+                }
+                pushUsercommands(command_right);
+                break;
+            default:
+                break;
+        }
     }
+    else if(queEnd === false)
+    {
+        console.log('아직 니 차례 아님.');
+    }
+
 }
 
 function keyUphandler()
@@ -48,8 +76,20 @@ function keyUphandler()
     pushKey = false;
 }
 
+function pushUsercommands(commandValue)
+{
+    usercommands.push(commandValue);
+    userCommandsCnt++;
+}
 
 function eraseAnscommands()
 {
-
+    ctx.clearRect(Answer.posCmX,Answer.posCmY,150,50);
 }
+
+function userInit()
+{
+    checkAnscommands();
+}
+
+userInit();
