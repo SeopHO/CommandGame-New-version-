@@ -2,7 +2,7 @@ let ansEnd = false;
 
 let pushKey;
 
-let userCommandsCnt=0;;
+let userCommandsCnt=0;
 
 AnsImage.onload=()=>
 {
