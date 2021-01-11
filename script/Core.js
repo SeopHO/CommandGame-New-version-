@@ -11,10 +11,24 @@ let corrent = false;
 
 let dotcnt = 0;
 
+let roundNum;
+let roundtype;
+
+
 function QuestionLen()
 {
     let a=4;
      return a;
+}
+
+function roundCheck(roundNum)
+{
+    switch(roundNum)
+    {
+        case 0:
+        case 1:
+        
+    }
 }
 
 function CreateRandomNum()

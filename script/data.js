@@ -23,9 +23,21 @@ const Answer={
 
 const round={
     url:"./image/.png",
+
     posX:canvas.width/2,
     posY:10,
+    
+    tutorial:1, //round 0~1
+    easy: 2, //round 2~4
+    normal: 3, //round 5~8
+    hard: 4, //round 9~15
+    hell: 6, //round 16~20,
+    jjin_hell: 7, //round 21~30
+    jjinJJin_hell:9, //round 31~
 }
+
+const roundTypeUrl = ["./image/.png","./image/.png","./image/.png",,"./image/.png",
+"./image/.png","./image/.png",];
 
 const command_up={
     text:'up',
@@ -76,6 +88,7 @@ let gunImage = new Image();
 
 // let Q_B_Image = new Image();
 // let A_B_Image = new Image();
+
 
 
 
