@@ -5,18 +5,28 @@ const Question={
     url:"./image/Question.png",
     EndUrl: "./image/your-turn.png",
     correctUrl: "./image/correct.png",
+    gunUrl: "./image/gun1.png",
     posX:750,
     posY:canvas.height/2,
     posCmX:650,
     posCmY:(canvas.height/2)-50,
-};
+}
+
 const Answer={
     url:"./image/Answer.png",
+    dieUrl:"./image/Answer_die.png",
     posX:150,
     posY:canvas.height/2,
     posCmX:170,
     posCmY:(canvas.height/2)-50,
 }
+
+const round={
+    url:"./image/.png",
+    posX:canvas.width/2,
+    posY:10,
+}
+
 const command_up={
     text:'up',
     code:38,
@@ -43,10 +53,11 @@ const command_X={
     url:"./image/x.png",
 }
 
-
-
 let QueImage = new Image();
 let AnsImage = new Image();
+
+let AnsDieImage = new Image();
+
 
 let upImage = new Image();
 let downImage = new Image();
@@ -61,13 +72,16 @@ let correctImage = new Image();
 
 let queEndImage = new Image();
 
+let gunImage = new Image();
+
 // let Q_B_Image = new Image();
 // let A_B_Image = new Image();
 
-QueImage.src= Question.url;
-AnsImage.src = Answer.url;
 
-queEndImage.src = Question.EndUrl;
+
+
+
+
 
 
 

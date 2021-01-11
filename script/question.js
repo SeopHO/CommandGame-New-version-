@@ -2,6 +2,8 @@ let cnt = 0;
 
 let queEnd = false;
 
+QueImage.src= Question.url;
+
 QueImage.onload=()=>
 {
     ctx.drawImage(QueImage,Question.posX,Question.posY);
@@ -27,6 +29,7 @@ function checkQuecommands()
             let timer3 = setTimeout(function()
             {
                 queEnd = true;
+                queEndImage.src = Question.EndUrl;
                 drawEndQuecommands();
                 let timer4 = setTimeout(function()
                 {
@@ -79,9 +82,10 @@ function eraseQuecommands()
     ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
 }
 
-function drawEndQuecommands()
+function drawEndQuecommands() 
 {
-    ctx.drawImage(queEndImage, Question.posCmX-50, Question.posCmY);
+
+    ctx.drawImage(queEndImage, Question.posCmX - 50, Question.posCmY);
 }
 
 function eraseEndQuecommands()

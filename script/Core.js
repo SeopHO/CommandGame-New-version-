@@ -60,6 +60,21 @@ function compareResult()
     if(wrong === true)
     {
         console.log('WRONG');
+        let timer = setTimeout(function()
+        {
+            ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
+            gunImage.src = Question.gunUrl;
+            gunImage.onload=()=>
+            {
+                ctx.drawImage(gunImage,Question.posX-30, Question.posY+40);
+            }
+            AnsDieImage.src = Answer.dieUrl;
+            ctx.clearRect(Answer.posX,Answer.posY,200,200);
+            AnsDieImage.onload=()=>
+            {
+                ctx.drawImage(AnsDieImage,Answer.posX, Answer.posY+55);
+            }
+        },4500);
     }
     else
     {

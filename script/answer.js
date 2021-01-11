@@ -4,6 +4,7 @@ let pushKey;
 
 let userCommandsCnt=0;
 
+AnsImage.src = Answer.url;
 AnsImage.onload=()=>
 {
     ctx.drawImage(AnsImage,Answer.posX,Answer.posY);
