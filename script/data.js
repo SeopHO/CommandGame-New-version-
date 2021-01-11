@@ -43,6 +43,8 @@ const command_X={
     url:"./image/x.png",
 }
 
+
+
 let QueImage = new Image();
 let AnsImage = new Image();
 

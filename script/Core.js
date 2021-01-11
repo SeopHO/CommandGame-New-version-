@@ -15,7 +15,7 @@ function QuestionLen()
 {
     let a=4;
      return a;
-} 
+}
 
 function CreateRandomNum()
 {
@@ -106,5 +106,6 @@ function init()
     CreateRandomNum();
     // console.log(QuestionLen());
     console.log(randcommands);
+    
 }
 init();

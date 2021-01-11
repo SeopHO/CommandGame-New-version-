@@ -65,7 +65,6 @@ function drawAnscommands(event)
     {
         console.log('아직 니 차례 아님.');
     }
-
 }
 
 function keyUphandler()
