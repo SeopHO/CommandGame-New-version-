@@ -11,23 +11,27 @@ let corrent = false;
 
 let dotcnt = 0;
 
-let roundNum;
-let roundtype;
+let roundNum=0;
+// let roundtype;
 
 
 function QuestionLen()
 {
-    let a=4;
-     return a;
+    return 4;
 }
 
 function roundCheck(roundNum)
 {
+    let Count;
     switch(roundNum)
     {
-        case 0:
-        case 1:
-        
+        case 0,1:
+            Count=4;
+            QuestionLen(Count);
+            break;
+        case 2,3,4:
+            QuestionLen(roundNum);
+            break;
     }
 }
 
@@ -111,6 +115,7 @@ function compareResult()
             clearTimeout(timer2);
         },6000);
 
+        roundNum++;
     }
 }
 
@@ -132,6 +137,8 @@ function reset()
 
 function init()
 {
+    roundCheck(roundNum);
+
     CreateRandomNum();
     // console.log(QuestionLen());
     console.log(randcommands);

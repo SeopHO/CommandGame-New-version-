@@ -22,10 +22,10 @@ const Answer={
 }
 
 const round={
-    url:"./image/.png",
+    url:"./image/round.png",
 
-    posX:canvas.width/2,
-    posY:10,
+    posX:(canvas.width/2)-95,
+    posY:-10,
     
     tutorial:1, //round 0~1
     easy: 2, //round 2~4
@@ -36,7 +36,8 @@ const round={
     jjinJJin_hell:9, //round 31~
 }
 
-const roundTypeUrl = ["./image/.png","./image/.png","./image/.png",,"./image/.png",
+
+const roundTypeUrl = ["./image/round_tutorial.png","./image/.png","./image/.png",,"./image/.png",
 "./image/.png","./image/.png",];
 
 const command_up={
@@ -85,6 +86,9 @@ let correctImage = new Image();
 let queEndImage = new Image();
 
 let gunImage = new Image();
+
+let roundImage = new Image();
+let roundTypeImage = new Image();
 
 // let Q_B_Image = new Image();
 // let A_B_Image = new Image();
