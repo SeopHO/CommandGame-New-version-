@@ -14,41 +14,66 @@ let dotcnt = 0;
 let roundNum=0;
 // let roundtype;
 
-let commandsCount;
+let commandsCount=null;
+let roundText;
 
-function QuestionLen(commandsCount)
-{
-    console.log(commandsCount);
-    
-    return commandsCount;
-}
+let ready=false;
+
 
 function roundCheck(roundNum)
 {
     if(roundNum <2)
+    {
         commandsCount = round.tutorial;
-    else if(roundNum < 5)
-        commandsCount = round.easy;
-    else if(roundNum < 9)
-        commandsCount = round.normal;
-    else if(roundNum < 16)
-        commandsCount = round.hard;
-    else if(roundNum < 21)
-        commandsCount = round.hell;
-    else if(roundNum < 31)
-        commandsCount = round.jjin_hell;
-    else if(roundNum > 31)
-        commandsCount = round.jjin_hell;
+        roundText = 'tutorial';
 
-    QuestionLen(commandsCount);
+    }
+    else if(roundNum < 5)
+    {
+        commandsCount = round.easy;
+        roundText = 'easy';
+    }
+    else if(roundNum < 9)
+    {
+        commandsCount = round.normal;
+        roundText = 'normal';
+    }
+    else if(roundNum < 16)
+    {
+        commandsCount = round.hard;
+        roundText = 'hard';
+    }
+    else if(roundNum < 21)
+    {
+        commandsCount = round.hell;
+        roundText = 'hell';
+    }
+    
+    else if(roundNum < 31)
+    {
+        commandsCount = round.jjin_hell;
+        roundText = 'jjin_hell';
+    }
+    else if(roundNum > 31)
+    {
+        commandsCount = round.jjinJJin_hell;
+        roundText = 'jjinJJin_hell';
+    }
 
 }
 
+function QuestionLen(commandsCount)
+{
+    return commandsCount;
+}
+
+
 function CreateRandomNum()
 {
-    for(let i=0;i<QuestionLen();i++)
+    for(let i=0;i<QuestionLen(commandsCount);i++)
     {
         randNum = Math.floor(Math.random() * 4);
+        
         randNumArr.push(randNum);
         let temp = randNumArr[i];
         randcommands[i] = commands[temp];
@@ -57,7 +82,7 @@ function CreateRandomNum()
 
 function comparecommands()
 {
-    for(let i=0;i<QuestionLen();i++)
+    for(let i=0;i<QuestionLen(commandsCount);i++)
     {
        if(randcommands[i] != usercommands[i])
        {
@@ -140,6 +165,7 @@ function reset()
     usercommands=[];
     randcommands=[];
     randNumArr = [];
+    ready = false;
     queInit();
     init();
 }
@@ -148,8 +174,7 @@ function init()
 {
     roundCheck(roundNum);
     CreateRandomNum();
-    // console.log(QuestionLen());
     console.log(randcommands);
-
 }
+
 init();

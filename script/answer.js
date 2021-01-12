@@ -78,7 +78,7 @@ function pushUsercommands(commandValue)
     usercommands.push(commandValue);
     userCommandsCnt++;
 
-    if(userCommandsCnt === QuestionLen())
+    if(userCommandsCnt === QuestionLen(commandsCount))
     {
         ansEnd = true;
         eraseAnscommands();

@@ -21,7 +21,7 @@ function checkQuecommands()
         },1000);
         cnt++;
 
-        if(cnt === QuestionLen())
+        if(cnt === QuestionLen(commandsCount))
         {
             clearInterval(timer1);
 
@@ -96,5 +96,6 @@ function queInit()
     checkQuecommands();
 }
 
+queInit();
 
 
