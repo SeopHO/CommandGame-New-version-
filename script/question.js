@@ -95,6 +95,6 @@ function queInit()
 {
     checkQuecommands();
 }
-queInit();
+
 
 

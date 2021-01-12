@@ -36,7 +36,6 @@ const round={
     jjinJJin_hell:9, //round 31~
 }
 
-
 const roundTypeUrl = ["./image/round_tutorial.png","./image/.png","./image/.png",,"./image/.png",
 "./image/.png","./image/.png",];
 
@@ -70,7 +69,6 @@ let QueImage = new Image();
 let AnsImage = new Image();
 
 let AnsDieImage = new Image();
-
 
 let upImage = new Image();
 let downImage = new Image();

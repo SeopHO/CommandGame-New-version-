@@ -14,25 +14,34 @@ let dotcnt = 0;
 let roundNum=0;
 // let roundtype;
 
+let commandsCount;
 
-function QuestionLen()
+function QuestionLen(commandsCount)
 {
-    return 4;
+    console.log(commandsCount);
+    
+    return commandsCount;
 }
 
 function roundCheck(roundNum)
 {
-    let Count;
-    switch(roundNum)
-    {
-        case 0,1:
-            Count=4;
-            QuestionLen(Count);
-            break;
-        case 2,3,4:
-            QuestionLen(roundNum);
-            break;
-    }
+    if(roundNum <2)
+        commandsCount = round.tutorial;
+    else if(roundNum < 5)
+        commandsCount = round.easy;
+    else if(roundNum < 9)
+        commandsCount = round.normal;
+    else if(roundNum < 16)
+        commandsCount = round.hard;
+    else if(roundNum < 21)
+        commandsCount = round.hell;
+    else if(roundNum < 31)
+        commandsCount = round.jjin_hell;
+    else if(roundNum > 31)
+        commandsCount = round.jjin_hell;
+
+    QuestionLen(commandsCount);
+
 }
 
 function CreateRandomNum()
@@ -138,10 +147,9 @@ function reset()
 function init()
 {
     roundCheck(roundNum);
-
     CreateRandomNum();
     // console.log(QuestionLen());
     console.log(randcommands);
-    
+
 }
 init();
