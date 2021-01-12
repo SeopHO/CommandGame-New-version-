@@ -5,12 +5,6 @@ roundImage.onload=()=>
     ctx.drawImage(roundImage,round.posX, round.posY+40);
 }
 
-roundTypeImage.src = roundTypeUrl[0];
-
-roundTypeImage.onload=()=>
-{
-    ctx.drawImage(roundTypeImage,round.posX-10, round.posY+90);
-}
 
 function eraseRoundType()
 {
@@ -19,6 +13,8 @@ function eraseRoundType()
 
 switch (roundText) {
     case 'tutorial':
+        console.log('튜토리얼');
+        
         eraseRoundType();
         roundTypeImage.src = roundTypeUrl[0];
         roundTypeImage.onload = () => {
@@ -26,6 +22,7 @@ switch (roundText) {
         }
         break;
     case 'easy':
+        console.log('이지');
         eraseRoundType();
         roundTypeImage.src = roundTypeUrl[1];
         roundTypeImage.onload = () => {

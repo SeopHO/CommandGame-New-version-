@@ -22,42 +22,62 @@ let ready=false;
 
 function roundCheck(roundNum)
 {
-    if(roundNum <2)
-    {
-        commandsCount = round.tutorial;
-        roundText = 'tutorial';
+    console.log(roundNum);
 
-    }
-    else if(roundNum < 5)
-    {
-        commandsCount = round.easy;
-        roundText = 'easy';
-    }
-    else if(roundNum < 9)
-    {
-        commandsCount = round.normal;
-        roundText = 'normal';
-    }
-    else if(roundNum < 16)
-    {
-        commandsCount = round.hard;
-        roundText = 'hard';
-    }
-    else if(roundNum < 21)
-    {
-        commandsCount = round.hell;
-        roundText = 'hell';
-    }
-    
-    else if(roundNum < 31)
-    {
-        commandsCount = round.jjin_hell;
-        roundText = 'jjin_hell';
-    }
-    else if(roundNum > 31)
-    {
-        commandsCount = round.jjinJJin_hell;
-        roundText = 'jjinJJin_hell';
+    switch (roundNum) {
+        case 0:
+        case 1:
+            commandsCount = round.tutorial;
+            roundText = 'tutorial';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            commandsCount = round.easy;
+            roundText = 'easy';
+            break; 
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+            commandsCount = round.normal;
+            roundText = 'normal';
+            break;
+        case 9:
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+            commandsCount = round.hard;
+            roundText = 'hard';
+            break;
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+            commandsCount = round.hell;
+            roundText = 'hell';
+            break;
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+        case 27:
+        case 28:
+        case 29:
+        case 30:
+            commandsCount = round.jjin_hell;
+            roundText = 'jjin_hell';
+            break;
+        default:
+            commandsCount = round.jjinJJin_hell;
+            roundText = 'jjinJJin_hell';
+            break;
     }
 
 }
