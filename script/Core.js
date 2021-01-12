@@ -188,6 +188,7 @@ function reset()
     ready = false;
     queInit();
     init();
+    roundImageCheck();
 }
 
 function init()
