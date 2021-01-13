@@ -12,7 +12,7 @@ function eraseRoundType()
 
 function roundImageCheck()
 {
-    switch (roundText) {
+    switch (round.text) {
         case 'tutorial':
             eraseRoundType();
             roundTypeImage.src = roundTypeUrl[0];

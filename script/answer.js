@@ -1,8 +1,4 @@
-let ansEnd = false;
-
-let pushKey;
-
-let userCommandsCnt=0;
+let a_cnt=0;
 
 AnsImage.src = Answer.url;
 AnsImage.onload=()=>
@@ -15,9 +11,9 @@ document.addEventListener("keyup",keyUphandler);
 
 function drawAnscommands(event)
 {
-    if(queEnd === true && pushKey === false && ansEnd === false)
+    if(Question.queEnd === true && Answer.pushKey === false && Answer.ansEnd === false)
     {
-        pushKey = true;
+        Answer.pushKey = true;
         switch(event.keyCode)
         {
             case command_up.code:
@@ -62,7 +58,7 @@ function drawAnscommands(event)
                 break;
         }
     }
-    else if(queEnd === false)
+    else if(Question.queEnd === false)
     {
         console.log('아직 니 차례 아님.');
     }
@@ -70,17 +66,17 @@ function drawAnscommands(event)
 
 function keyUphandler()
 {
-    pushKey = false;
+    Answer.pushKey = false;
 }
 
 function pushUsercommands(commandValue)
 {
     usercommands.push(commandValue);
-    userCommandsCnt++;
+    a_cnt++;
 
-    if(userCommandsCnt === QuestionLen(commandsCount))
+    if(a_cnt === QuestionLen(round.commandsCount))
     {
-        ansEnd = true;
+        Answer.ansEnd = true;
         eraseAnscommands();
         console.log(usercommands);
         console.log('Answer End');
@@ -89,7 +85,7 @@ function pushUsercommands(commandValue)
 
 function eraseAnscommands()
 {
-    if(ansEnd === true)
+    if(Answer.ansEnd === true)
     {
         let timer=setTimeout(function()
         {

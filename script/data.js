@@ -1,6 +1,11 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const game={
+    wrong: false,
+    corrent: false,
+}
+
 const Question={
     url:"./image/Question.png",
     EndUrl: "./image/your-turn.png",
@@ -10,6 +15,8 @@ const Question={
     posY:canvas.height/2,
     posCmX:650,
     posCmY:(canvas.height/2)-50,
+
+    queEnd:false,
 }
 
 const Answer={
@@ -19,14 +26,19 @@ const Answer={
     posY:canvas.height/2,
     posCmX:170,
     posCmY:(canvas.height/2)-50,
+
+    ansEnd:false,
+    pushKey:false,
 }
 
 const round={
     url:"./image/round.png",
-
     posX:(canvas.width/2)-95,
     posY:-10,
-    
+    num:0,
+    text:null,
+    commandsCount: null,
+
     tutorial:1, //round 0~1
     easy: 2, //round 2~4
     normal: 3, //round 5~8
@@ -88,8 +100,6 @@ let gunImage = new Image();
 let roundImage = new Image();
 let roundTypeImage = new Image();
 
-// let Q_B_Image = new Image();
-// let A_B_Image = new Image();
 
 
 

@@ -1,6 +1,4 @@
-let cnt = 0;
-
-let queEnd = false;
+let q_cnt = 0;
 
 QueImage.src= Question.url;
 QueImage.onload=()=>
@@ -12,22 +10,22 @@ function checkQuecommands()
 {
     let timer1=setInterval(function()
     {    
-        let rec = randcommands[cnt].text;
+        let rec = randcommands[q_cnt].text;
         drawQuecommands(rec);
         let timer2 = setTimeout(function()
         {
             eraseQuecommands();
             clearTimeout(timer2);
         },1000);
-        cnt++;
+        q_cnt++;
 
-        if(cnt === QuestionLen(commandsCount))
+        if(q_cnt === QuestionLen(round.commandsCount))
         {
             clearInterval(timer1);
 
             let timer3 = setTimeout(function()
             {
-                queEnd = true;
+                Question.queEnd = true;
                 queEndImage.src = Question.EndUrl;
                 drawEndQue();
                 let timer4 = setTimeout(function()
@@ -70,7 +68,6 @@ function drawQuecommands(rec)
                 ctx.drawImage(rightImage, Question.posCmX, Question.posCmY);
             }
             break;
-            
         default:
             break;
     }

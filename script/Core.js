@@ -1,47 +1,34 @@
-let commands = [command_up,command_down,command_left,command_right];
+const commands = [command_up,command_down,command_left,command_right];
 let usercommands = [];
-
 let randcommands = []; 
 
 let randNum;
 let randNumArr = [];
 
-let wrong = false;
-let corrent = false;
+let dotcnt = 0; //question's thinking animation.
 
-let dotcnt = 0;
-
-let roundNum=0;
-// let roundtype;
-
-let commandsCount=null;
-let roundText;
-
-let ready=false;
-
-
-function roundCheck(roundNum)
+function roundCheck(value)
 {
-    console.log(roundNum);
+    console.log(round.num);
 
-    switch (roundNum) {
+    switch (round.num) {
         case 0:
         case 1:
-            commandsCount = round.tutorial;
-            roundText = 'tutorial';
+            round.commandsCount = round.tutorial;
+            round.text = 'tutorial';
             break;
         case 2:
         case 3:
         case 4:
-            commandsCount = round.easy;
-            roundText = 'easy';
+            round.commandsCount = round.easy;
+            round.text = 'easy';
             break; 
         case 5:
         case 6:
         case 7:
         case 8:
-            commandsCount = round.normal;
-            roundText = 'normal';
+            round.commandsCount = round.normal;
+            round.text = 'normal';
             break;
         case 9:
         case 10:
@@ -50,16 +37,16 @@ function roundCheck(roundNum)
         case 13:
         case 14:
         case 15:
-            commandsCount = round.hard;
-            roundText = 'hard';
+            round.commandsCount = round.hard;
+            round.text = 'hard';
             break;
         case 16:
         case 17:
         case 18:
         case 19:
         case 20:
-            commandsCount = round.hell;
-            roundText = 'hell';
+            round.commandsCount = round.hell;
+            round.text = 'hell';
             break;
         case 21:
         case 22:
@@ -71,26 +58,26 @@ function roundCheck(roundNum)
         case 28:
         case 29:
         case 30:
-            commandsCount = round.jjin_hell;
-            roundText = 'jjin_hell';
+            round.commandsCount = round.jjin_hell;
+            round.text = 'jjin_hell';
             break;
         default:
-            commandsCount = round.jjinJJin_hell;
-            roundText = 'jjinJJin_hell';
+            round.commandsCount = round.jjinJJin_hell;
+            round.text = 'jjinJJin_hell';
             break;
     }
 
 }
 
-function QuestionLen(commandsCount)
+function QuestionLen(value)
 {
-    return commandsCount;
+    return round.commandsCount;
 }
 
 
 function CreateRandomNum()
 {
-    for(let i=0;i<QuestionLen(commandsCount);i++)
+    for(let i=0;i<QuestionLen(round.commandsCount);i++)
     {
         randNum = Math.floor(Math.random() * 4);
         
@@ -102,11 +89,11 @@ function CreateRandomNum()
 
 function comparecommands()
 {
-    for(let i=0;i<QuestionLen(commandsCount);i++)
+    for(let i=0;i<QuestionLen(round.commandsCount);i++)
     {
        if(randcommands[i] != usercommands[i])
        {
-            wrong = true;
+            game.wrong = true;
        }
     }
 
@@ -129,9 +116,9 @@ function comparecommands()
 
 function compareResult()
 {
-    if(wrong === true)
+    if(game.wrong === true)
     {
-        console.log('WRONG');
+        console.log('game.wrong');
         let timer = setTimeout(function()
         {
             ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
@@ -169,23 +156,24 @@ function compareResult()
             clearTimeout(timer2);
         },6000);
 
-        roundNum++;
+        round.num++;
     }
 }
 
+
 function reset()
 {
-    ansEnd = false;
-    queEnd=false;
-    cnt=0;
-    wrong = false;
-    corrent = false;
-    userCommandsCnt=0;
+    Answer.ansEnd = false;
+    Question.queEnd=false;
+    q_cnt=0;
+    game.wrong = false;
+    game.corrent = false;
+    a_cnt=0;
     dotcnt = 0;
     usercommands=[];
     randcommands=[];
     randNumArr = [];
-    ready = false;
+    // ready = false;
     queInit();
     init();
     roundImageCheck();
@@ -193,7 +181,7 @@ function reset()
 
 function init()
 {
-    roundCheck(roundNum);
+    roundCheck(round.num);
     CreateRandomNum();
     console.log(randcommands);
 }
