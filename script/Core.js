@@ -9,7 +9,7 @@ let dotcnt = 0; //question's thinking animation.
 
 function roundCheck(value)
 {
-    console.log(round.num);
+    // console.log(round.num);
 
     switch (round.num) {
         case 0:
@@ -118,7 +118,7 @@ function compareResult()
 {
     if(game.wrong === true)
     {
-        console.log('game.wrong');
+        console.log('Wrong');
         let timer = setTimeout(function()
         {
             ctx.clearRect(Question.posCmX,Question.posCmY,150,50);
@@ -160,6 +160,11 @@ function compareResult()
     }
 }
 
+function saveRound()
+{
+
+}
+
 
 function reset()
 {
@@ -183,7 +188,7 @@ function init()
 {
     roundCheck(round.num);
     CreateRandomNum();
-    console.log(randcommands);
+    // console.log(randcommands);
 }
 
 init();

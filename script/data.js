@@ -4,6 +4,8 @@ const ctx = canvas.getContext("2d");
 const game={
     wrong: false,
     corrent: false,
+    // save_LS_Key:"Round",
+    // sav_LS_value:null,
 }
 
 const Question={
@@ -39,7 +41,7 @@ const round={
     text:null,
     commandsCount: null,
 
-    tutorial:1, //round 0~1
+    tutorial:10, //round 0~1
     easy: 2, //round 2~4
     normal: 3, //round 5~8
     hard: 4, //round 9~15

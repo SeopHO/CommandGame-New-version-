@@ -78,7 +78,7 @@ function pushUsercommands(commandValue)
     {
         Answer.ansEnd = true;
         eraseAnscommands();
-        console.log(usercommands);
+        // console.log(usercommands);
         console.log('Answer End');
     }
 }
