@@ -5,7 +5,6 @@ roundImage.onload=()=>
     ctx.drawImage(roundImage,round.posX, round.posY+40);
 }
 
-
 function eraseRoundType()
 {
     ctx.clearRect(round.posX-10, round.posY+90,200,70);
@@ -15,7 +14,6 @@ function roundImageCheck()
 {
     switch (roundText) {
         case 'tutorial':
-            console.log('튜토리얼');
             eraseRoundType();
             roundTypeImage.src = roundTypeUrl[0];
             roundTypeImage.onload = () => {
@@ -23,7 +21,6 @@ function roundImageCheck()
             }
             break;
         case 'easy':
-            console.log('이지');
             eraseRoundType();
             roundTypeImage.src = roundTypeUrl[1];
             roundTypeImage.onload = () => {

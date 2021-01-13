@@ -36,7 +36,7 @@ const round={
     jjinJJin_hell:9, //round 31~
 }
 
-const roundTypeUrl = ["./image/round_tutorial.png","./image/round_easy.png","./image/round_normal.png",,"./image/round_hard.png",
+const roundTypeUrl = ["./image/round_tutorial.png","./image/round_easy.png","./image/round_normal.png","./image/round_hard.png",
 "./image/round_hell.png","./image/round_jjin_hell.png","image/round_jjinJJin_hell.png"];
 
 const command_up={
